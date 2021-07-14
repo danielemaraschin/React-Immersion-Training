@@ -1,5 +1,6 @@
 
 import MainGrid from '../src/components/MainGrid'
+import Box from '../src/components/Box'
 
 export default function Home() {
   return (
