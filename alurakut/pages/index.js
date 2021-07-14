@@ -9,9 +9,14 @@ background: #FFFFFF;
 border-radius: 8px;
 `;
 
+ const MainGrid = styled.main`
+  display: grid;
+  grid-gap: 10px;
+ `;
+
 export default function Home() {
   return (
-    <main>
+    <MainGrid>
       <Box>
         Imagem
       </Box>
@@ -25,5 +30,5 @@ export default function Home() {
         Comunidades
       </Box>
 
-    </main>)
+    </MainGrid>)
 }
