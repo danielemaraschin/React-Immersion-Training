@@ -36,12 +36,12 @@ const MainGrid = styled.main`
 export default function Home() {
   return (
     <MainGrid>
-      <div>
-        <Box style={{ gridArea: 'profileArea' }}>
+      <div className="profileArea" style={{ gridArea: 'profileArea' }}>
+        <Box >
           Imagem
         </Box>
       </div>
-      <div style={{ gridArea: 'welcomeArea' }}>
+      <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
         <Box>
           Bem vindo
         </Box>
@@ -49,7 +49,7 @@ export default function Home() {
           Scrapt
         </Box>
       </div>
-      <div style={{ gridArea: 'profileRelationsArea' }}>
+      <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
         <Box>
           Amigos
         </Box>
