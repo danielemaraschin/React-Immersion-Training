@@ -10,11 +10,20 @@ border-radius: 8px;
 `;
 
 export default function Home() {
-  return(
+  return (
     <main>
-      Imagem
-      Bem vindo
-      Amigos
-      Comunidades
+      <Box>
+        Imagem
+      </Box>
+      <Box>
+        Bem vindo
+      </Box>
+      <Box>
+        Amigos
+      </Box>
+      <Box>
+        Comunidades
+      </Box>
+
     </main>)
 }
