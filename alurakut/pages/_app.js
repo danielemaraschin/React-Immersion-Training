@@ -21,6 +21,12 @@ const GlobalStyle = createGlobalStyle`
     min-eight: 100vh;
     flex-direction:column;
   }
+
+  img {
+    max-width: 100%;
+    heigh: auto;
+    display: block;
+  }
 `
 
 const theme = {
