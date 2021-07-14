@@ -38,7 +38,7 @@ export default function Home() {
     <MainGrid>
       <div className="profileArea" style={{ gridArea: 'profileArea' }}>
         <Box >
-          Imagem
+          <img src="https://github.com/danielemaraschin.png"/>
         </Box>
       </div>
       <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
