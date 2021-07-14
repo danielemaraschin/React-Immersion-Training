@@ -18,22 +18,35 @@ const MainGrid = styled.main`
     grid-template-areas:
      "profileArea welcomeArea profileRelationsArea";
     grid-template-columns: 
-      160px 618px 312px;
+      160px 1fr 312px;
   }
 `;
 
 export default function Home() {
   return (
     <MainGrid>
-      <Box style={{gridArea: 'profileArea' }}>
-        Imagem
-      </Box>
-      <Box style={{gridArea: 'welcomeArea' }}>
-        Bem vindo
-      </Box>
-      <Box style={{gridArea: 'profileRelationsArea'}}>
-        Comunidades
-      </Box>
+      <div>
+        <Box style={{ gridArea: 'profileArea' }}>
+          Imagem
+        </Box>
+      </div>
+      <div style={{ gridArea: 'welcomeArea' }}>
+        <Box>
+          Bem vindo
+        </Box>
+        <Box>
+          Scrapt
+        </Box>
+      </div>
+      <div style={{ gridArea: 'profileRelationsArea' }}>
+        <Box>
+          Amigos
+        </Box>
+        <Box>
+          Comunidades
+        </Box>
+      </div>
+
 
     </MainGrid>)
 }
