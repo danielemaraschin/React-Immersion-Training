@@ -12,6 +12,12 @@ border-radius: 8px;
  const MainGrid = styled.main`
   display: grid;
   grid-gap: 10px;
+  padding: 16px;
+
+  @media(min-width: 860px){
+    grid-template-columns: 160px 618px 312px;
+  }
+  
  `;
 
 export default function Home() {
@@ -22,9 +28,6 @@ export default function Home() {
       </Box>
       <Box>
         Bem vindo
-      </Box>
-      <Box>
-        Amigos
       </Box>
       <Box>
         Comunidades
