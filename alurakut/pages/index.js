@@ -2,7 +2,7 @@
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 
-const userGithub = 'juniornvieira'
+const userGithub = 'danielemaraschin'
 export default function Home() {
   return (
     <MainGrid>
