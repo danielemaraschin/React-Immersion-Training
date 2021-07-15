@@ -2,15 +2,14 @@ import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 import { AlurakutMenu } from '../src/lib/AlurakutCommons'
 
-function ProfileSidebar() {
+function ProfileSidebar(propriedades) {
   return (
     <Box >
-      <img src={`https://github.com/${userGithub}.png`} style={{ borderRadius: '8px' }} />
+      <img src={`https://github.com/${propriedades.githubUser}.png`} style={{ borderRadius: '8px' }} />
     </Box>
   )
 }
 
-const userGithub = 'danielemaraschin'
 const usuarioAleatorio = "danielemaraschin"
 export default function Home() {
   return (

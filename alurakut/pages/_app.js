@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { AlurakutStyles } from '../src/lib/AlurakutCommons'
 
 const GlobalStyle = createGlobalStyle`
 /*reset CSS (necolas reset - reset simples, procurar na internet)*/
@@ -27,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     heigh: auto;
     display: block;
   }
+  ${AlurakutStyles}
 `
 
 const theme = {
