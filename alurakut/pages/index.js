@@ -45,7 +45,7 @@ export default function Home() {
             <OrkutNostalgicIconSet/>
           </Box>
           <Box>
-            <h2>What do you want to do?</h2>
+            <h2 className="subTitle">What do you want to do?</h2>
             <form>
               <div>
                 <input 
@@ -56,11 +56,14 @@ export default function Home() {
               </div>
               <div>
                 <input 
-                 placeholder="What will your community name be?" 
-                 name="title"
-                 aria-label="Qual será o nome da sua comunidade?"                
+                 placeholder="Add an URL to be the image of your community" 
+                 name="image"
+                 aria-label="Coloque uma URL para capa da comunidade"                
                 />
               </div>
+              <button>
+                
+              </button>
             </form>
           </Box>
         </div>
