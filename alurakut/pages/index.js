@@ -40,15 +40,18 @@ export default function Home() {
         <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
           <Box>
             <h1 className="title">
-              Bem vindo(a)
+              Welcome
             </h1>
             <OrkutNostalgicIconSet/>
+          </Box>
+          <Box>
+            <h2>What do you want to do?</h2>
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
-              Pessoas da Comunidade ({pessoasFavoritas.length})
+              Friends ({pessoasFavoritas.length})
             </h2>
             <ul>
               {pessoasFavoritas.map((itemAtual) => {
