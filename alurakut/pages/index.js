@@ -46,7 +46,11 @@ export default function Home() {
           </Box>
           <Box>
             <h2 className="subTitle">What do you want to do?</h2>
-            <form>
+            <form onSubmit={(event) =>{
+              event.preventDefaul
+              alert("TESTE")
+            }
+            }>
               <div>
                 <input 
                  placeholder="What will your community name be?" 
@@ -62,7 +66,7 @@ export default function Home() {
                 />
               </div>
               <button>
-                
+                Create community
               </button>
             </form>
           </Box>
