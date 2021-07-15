@@ -1,36 +1,41 @@
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
+import { AlurakutMenu } from '../src/lib/AlurakutCommons'
 
 function ProfileSidebar() {
-  return(
+  return (
     <Box >
-    <img src={`https://github.com/${userGithub}.png`} style={{ borderRadius: '8px' }} />
-  </Box>
+      <img src={`https://github.com/${userGithub}.png`} style={{ borderRadius: '8px' }} />
+    </Box>
   )
 }
 
 const userGithub = 'danielemaraschin'
+const usuarioAleatorio = "danielemaraschin"
 export default function Home() {
   return (
-    <MainGrid>
-      <div className="profileArea" style={{ gridArea: 'profileArea' }}>
-    	  <ProfileSidebar/>
-      </div>
-      <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
-        <Box>
-          Bem vindo
-        </Box>
+    <>
+      <AlurakutMenu/>
+      <MainGrid>
+        <div className="profileArea" style={{ gridArea: 'profileArea' }}>
+          <ProfileSidebar githubUser={usuarioAleatorio}/>
+        </div>
+        <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
+          <Box>
+            Bem vindo
+          </Box>
 
-      </div>
-      <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
-        <Box>
-          Amigos
-        </Box>
-        <Box>
-          Comunidades
-        </Box>
-      </div>
+        </div>
+        <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+          <Box>
+            Amigos
+          </Box>
+          <Box>
+            Comunidades
+          </Box>
+        </div>
 
 
-    </MainGrid>)
+      </MainGrid>
+    </>)
 }
