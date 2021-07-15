@@ -46,6 +46,14 @@ export default function Home() {
           </Box>
           <Box>
             <h2>What do you want to do?</h2>
+            <form>
+
+              <input 
+                placeholder="What will your community name be?" 
+                name="title"
+                aria-label="Qual será o nome da sua comunidade?"                
+                />
+            </form>
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
