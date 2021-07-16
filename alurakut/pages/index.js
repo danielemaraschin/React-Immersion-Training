@@ -47,7 +47,8 @@ export default function Home() {
           <Box>
             <h2 className="subTitle">What do you want to do?</h2>
             <form onSubmit={(event) =>{
-              event.preventDefaul
+              event.preventDefault()
+              console.log(event)
               alert("TESTE")
             }
             }>

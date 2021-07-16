@@ -264,7 +264,7 @@ export function OrkutNostalgicIconSet(props) {
         { name: 'Legal', slug: 'legal', icon: 'cool' },
         { name: 'Sexy', slug: 'sexy', icon: 'heart' },
       ].map(({ name, slug, icon }) => {
-        const total = props[slug] ? props[slug] : 3;
+        const total = props[slug] ? props[slug] : 3; //o original era 2 e não 3
 
         // if(props[slug]){
         //    total = props[slug]
