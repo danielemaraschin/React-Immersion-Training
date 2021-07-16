@@ -6,7 +6,7 @@ import React from 'react';
 
 function ProfileSidebar(propriedades) {
   return (
-    <Box>
+    <Box as="aside"> {/*tag HTML para transf a div em side bar --<aside> is an HTML5 */}
       <img src={`https://github.com/${propriedades.githubUser}.png`} style={{ borderRadius: '8px' }} />
     <hr/>
     <a className="boxLink" href={`https://github.com/${propriedades.githubUser}`}>
@@ -19,7 +19,11 @@ function ProfileSidebar(propriedades) {
 }
 export default function Home() {
   const usuarioAleatorio = "danielemaraschin";
-  const [comunidades, setComunidades] = React.useState(['Alurakut'])
+  const [comunidades, setComunidades] = React.useState([{ 
+    id: '0',
+    title: 'Eu amo acordar cedo',
+    image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
+  }]);
   const pessoasFavoritas = [
     'juniornvieira',
     'ezequielkm',
@@ -43,19 +47,27 @@ export default function Home() {
             <OrkutNostalgicIconSet/>
           </Box>
           <Box>
-            <h2 className="subTitle">What do you want to do?</h2>
-            <form onSubmit={(event) =>{
-              event.preventDefault();
+          <form onSubmit={function handleCriaComunidade(e) {
+                e.preventDefault();
+                const dadosDoForm = new FormData(e.target);
 
-              const comunidadesAtualizadas = [...comunidades, 'Alura Star'];
-              setComunidades(comunidadesAtualizadas);
-            
+                console.log('Campo: ', dadosDoForm.get('title'));
+                console.log('Campo: ', dadosDoForm.get('image'));
+
+                const comunidade = {
+                  id: new Date().toISOString(),
+                  title: dadosDoForm.get('title'),
+                  image: dadosDoForm.get('image'),
+                }
+                const comunidadesAtualizadas = [...comunidades, comunidade];
+                setComunidades(comunidadesAtualizadas)
             }}>
               <div>
                 <input 
                  placeholder="What will your community name be?" 
                  name="title"
-                 aria-label="Qual será o nome da sua comunidade?"                
+                 aria-label="Qual será o nome da sua comunidade?"
+                 type="text"                
                 />
               </div>
               <div>
@@ -79,7 +91,7 @@ export default function Home() {
             <ul>
               {pessoasFavoritas.map((itemAtual) => {
                 return (
-                  <li>
+                  <li key={itemAtual}> {/*como é so usuario github pode ser so item atual*/}
                     <a href={`/users/${itemAtual}`} key={itemAtual}>
                       <img src={`https://github.com/${itemAtual}.png`} />
                       <span>{itemAtual}</span>
@@ -97,15 +109,14 @@ export default function Home() {
             <ul>
               {comunidades.map((itemAtual) => {
                 return (
-                  <li>
-                    <a href={`/users/${itemAtual}`} key={itemAtual}>
-                      <img src={`http://placehold.it/300x300`} />
-                      <span>{itemAtual}</span>
+                  <li key={itemAtual.id}>
+                    <a href={`/users/${itemAtual.title}`}>
+                      <img src={itemAtual.image} />
+                      <span>{itemAtual.title}</span>
                     </a>
                   </li>
                 )
               })}
-
             </ul>
           </ProfileRelationsBoxWrapper>
         </div>
