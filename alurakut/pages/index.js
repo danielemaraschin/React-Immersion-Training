@@ -19,16 +19,17 @@ function ProfileSidebar(propriedades) {
 
 export default function Home() {
   const usuarioAleatorio = "danielemaraschin";
+  const comunidades = [
+    'Eu amo minha mãe',
+   
+  ];
   const pessoasFavoritas = [
     'juniornvieira',
     'ezequielkm',
     'nkneip',
     'phr1990',
-    'peas',
     'omariosouto',
-    'juunegreiros',
-    'felipefialho',
-    'marcobrunodev'
+    'juunegreiros'
   ]
   return (
     <>
@@ -48,10 +49,9 @@ export default function Home() {
             <h2 className="subTitle">What do you want to do?</h2>
             <form onSubmit={(event) =>{
               event.preventDefault()
-              console.log(event)
-              alert("TESTE")
-            }
-            }>
+              comunidades.push('Alura Stars');
+              console.log(comunidades)
+            }       }>
               <div>
                 <input 
                  placeholder="What will your community name be?" 
@@ -73,7 +73,7 @@ export default function Home() {
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
-          <ProfileRelationsBoxWrapper>
+        <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Friends ({pessoasFavoritas.length})
             </h2>
@@ -83,6 +83,24 @@ export default function Home() {
                   <li>
                     <a href={`/users/${itemAtual}`} key={itemAtual}>
                       <img src={`https://github.com/${itemAtual}.png`} />
+                      <span>{itemAtual}</span>
+                    </a>
+                  </li>
+                )
+              })}
+
+            </ul>
+          </ProfileRelationsBoxWrapper>
+          <ProfileRelationsBoxWrapper>
+            <h2 className="smallTitle">
+              Communities ({comunidades.length})
+            </h2>
+            <ul>
+              {comunidades.map((itemAtual) => {
+                return (
+                  <li>
+                    <a href={`/users/${itemAtual}`} key={itemAtual}>
+                      <img src={`http://placehold.it/300x300`} />
                       <span>{itemAtual}</span>
                     </a>
                   </li>
