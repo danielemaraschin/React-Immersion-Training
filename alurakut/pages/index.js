@@ -19,7 +19,7 @@ function ProfileSidebar(propriedades) {
 }
 export default function Home() {
   const usuarioAleatorio = "danielemaraschin";
-  const comunidades = React.useState(['Alurakut'])
+  const [comunidades, setComunidades] = React.useState(['Alurakut'])
   const pessoasFavoritas = [
     'juniornvieira',
     'ezequielkm',
@@ -45,10 +45,12 @@ export default function Home() {
           <Box>
             <h2 className="subTitle">What do you want to do?</h2>
             <form onSubmit={(event) =>{
-              event.preventDefault()
-              comunidades.push('Alura');
-              console.log(comunidades)
-            }       }>
+              event.preventDefault();
+
+              const comunidadesAtualizadas = [...comunidades, 'Alura Star'];
+              setComunidades(comunidadesAtualizadas);
+            
+            }}>
               <div>
                 <input 
                  placeholder="What will your community name be?" 
