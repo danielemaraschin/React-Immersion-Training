@@ -2,6 +2,7 @@ import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons'
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
+import React from 'react';
 
 function ProfileSidebar(propriedades) {
   return (
@@ -18,6 +19,7 @@ function ProfileSidebar(propriedades) {
 }
 
 export default function Home() {
+  React.useState();
   const usuarioAleatorio = "danielemaraschin";
   const comunidades = [
     'Eu amo minha mãe',
