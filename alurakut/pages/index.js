@@ -21,7 +21,7 @@ export default function Home() {
   const usuarioAleatorio = "danielemaraschin";
   const [comunidades, setComunidades] = React.useState([{ 
     id: '0',
-    title: 'Eu amo acordar cedo',
+    title: 'I love waking up early',
     image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
   }]);
   const pessoasFavoritas = [
@@ -32,6 +32,22 @@ export default function Home() {
     'omariosouto',
     'juunegreiros'
   ]
+
+  const [seguidores, setSeguidores] = React.useState([]);
+  // 0 - Pegar o array de dados do github 
+  React.useEffect(function() {
+    fetch('https://api.github.com/users/peas/followers')
+    .then(function (respostaDoServidor) {
+      return respostaDoServidor.json();
+    })
+    .then(function(respostaCompleta) {
+      setSeguidores(respostaCompleta);
+    })
+  }, [])
+
+  console.log('seguidores antes do return', seguidores);
+
+
   return (
     <>
       <AlurakutMenu />
