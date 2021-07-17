@@ -17,6 +17,19 @@ function ProfileSidebar(propriedades) {
     </Box>
   )
 }
+
+function ProfileRelationsBox(propriedades) {
+  return (
+    <ProfileRelationsBoxWrapper>
+      <h2 className="smallTitle">
+        {propriedades.title} ({propriedades.items.length})
+      </h2>
+    </ProfileRelationsBoxWrapper>
+  )
+}
+
+
+
 export default function Home() {
   const usuarioAleatorio = "danielemaraschin";
   const [comunidades, setComunidades] = React.useState([{ 
@@ -36,7 +49,7 @@ export default function Home() {
   const [seguidores, setSeguidores] = React.useState([]);
   // 0 - Pegar o array de dados do github 
   React.useEffect(function() {
-    fetch('https://api.github.com/users/peas/followers')
+    fetch('https://api.github.com/users/danielemaraschin/followers')
     .then(function (respostaDoServidor) {
       return respostaDoServidor.json();
     })
@@ -100,6 +113,7 @@ export default function Home() {
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+        <ProfileRelationsBox title="Seguidores" items={seguidores} />
         <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Friends ({pessoasFavoritas.length})
@@ -115,7 +129,6 @@ export default function Home() {
                   </li>
                 )
               })}
-
             </ul>
           </ProfileRelationsBoxWrapper>
           <ProfileRelationsBoxWrapper>
