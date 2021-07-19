@@ -74,7 +74,6 @@ export default function Home() {
     .then((respostaCompleta) => {//.data é padrao do GraphQL para pegar os dados e a busca sempre será o nome da query, no nosso caso a query era allComunities
       const comunidadesVindasDoDato = respostaCompleta.data.allCommunities;
       setComunidades(comunidadesVindasDoDato)  
-      console.log(comunidades)
     })
 }, [])
 
@@ -105,25 +104,26 @@ export default function Home() {
 
               const comunidade = {
                 title: dadosDoForm.get('title'),
-                image: dadosDoForm.get('image'),
+                imageUrl: dadosDoForm.get('image'),
                 creatorSlug: usuarioAleatorio,
               }
 
-              fetch('api/communities', {
+              fetch('/api/communities', {
                 method: 'POST',
                 headers: {
-                  'Content-Type' : 'application/json'
+                  'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(comunidade)
               })
               .then(async (response) => {
                 const dados = await response.json();
                 console.log(dados.registroCriado);
-                const
-                })
-
-            }}>
-              <div>
+                const comunidade = dados.registroCriado;
+                const comunidadesAtualizadas = [...comunidades, comunidade];
+                setComunidades(comunidadesAtualizadas)
+              })
+          }}>
+            <div>
                 <input
                   placeholder="What will your community name be?"
                   name="title"
@@ -171,7 +171,7 @@ export default function Home() {
               {comunidades.map((itemAtual) => {
                 return (
                   <li key={itemAtual.id}>
-                    <a href={`/communities/${itemAtual.id}`}>
+                     <a href={`/communities/${itemAtual.id}`}>
                       <img src={itemAtual.imageUrl} />
                       <span>{itemAtual.title}</span>
                     </a>
