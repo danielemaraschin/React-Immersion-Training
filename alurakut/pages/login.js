@@ -1,10 +1,12 @@
 import React from 'react';
-// Hook do NextJS
+// useRouter é um Hook do NextJS 
+import { useRouter } from 'next/router';
+import nookies from 'nokies';
 
 
 export default function LoginScreen() {
-
-  const [githubUser, setGithubUser] = React.useState('omariosouto');
+  const router = useRouter();
+  const [githubUser, setGithubUser] = React.useState('danielemaraschin');
 
   return (
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -32,10 +34,10 @@ export default function LoginScreen() {
                 .then(async (respostaDoServer) => {
                     const dadosDaResposta = await respostaDoServer.json()
                     const token = dadosDaResposta.token;
-                    nookies.set(null, 'USER_TOKEN', token, {
-                        path: '/',
-                        maxAge: 86400 * 7 
-                    })
+                        nookies.set(null, 'USER_TOKEN', token, { //primeiro parametro eh o contexto mas nao temos no navegador entao passamos null
+                            path: '/',
+                            maxAge: 86400 * 7 //back-end geralmente fala quando tempo (está em segundos, eh a quantdd de segundos em um dia x 7)
+                        })
                     router.push('/')
                 })
           }}>
