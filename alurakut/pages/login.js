@@ -1,12 +1,12 @@
 import React from 'react';
 // useRouter é um Hook do NextJS 
 import { useRouter } from 'next/router';
-import nookies from 'nokies';
+import nookies from 'nookies';
 
 
 export default function LoginScreen() {
   const router = useRouter();
-  const [githubUser, setGithubUser] = React.useState('danielemaraschin');
+  const [githubUser, setGithubUser] = React.useState('');
 
   return (
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
